@@ -1,6 +1,9 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse,redirect
+from django.http import JsonResponse
 from datetime import datetime
-from home.models import Contact
+import random
+from home.models import *
+
 # Create your views here.
 def index(request):
     # context = {
@@ -26,3 +29,37 @@ def contact(request):
 def services(request):
     return render(request,'services.html')
     # return HttpResponse('This is services page.')
+
+def quiz(request):
+    context = {'categories':Category.objects.all()}
+    if request.GET.get('category'):
+        return redirect(f"/quiz/?category={request.GET.get('category')}")
+    return render(request,'quiz.html',context)
+
+def takequiz(request):
+    
+    return render(request, 'takequiz.html')
+    
+#for createing an api
+def get_quiz(request):
+    try:
+        question_objs=Question.objects.all()
+        if request.GET.get('category'):
+            question_objs=question_objs.filter(category__category_name__icontains=request.GET.get('category'))
+        question_objs=list(question_objs)    
+        data=[]
+        random.shuffle(question_objs)
+        
+        for question_obj in question_objs:
+            data.append({
+                "Category":question_obj.category.category_name,
+                "Question":question_obj.question,
+                "Marks":question_obj.marks,
+                "Answer":question_obj.get_answers(),
+            })
+            
+        payload = {'status':True,'data': data}
+        return JsonResponse(payload)
+    except Exception as e:
+        print(e)
+    return HttpResponse('Error Occured')
