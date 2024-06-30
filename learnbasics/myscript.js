@@ -1,10 +1,11 @@
 var guessNum = prompt('Enter the number: ')
-if(guessNum > 10){
-    alert("Very far")
+var num = 13
+if(Math.abs(guessNum-num) >= 10){
+    console.log("Very far")
 }
-else if(guessNum > 5 && guessNum < 10){
-    alert("near")
+else if(Math.abs(guessNum-num) >= 5 && Math.abs(guessNum-num) < 10){
+    console.log("near")
 }
 else{ 
-    alert("tTrue num")
+    console.log("tTrue num")
 } 
