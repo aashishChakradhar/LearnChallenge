@@ -1,5 +1,5 @@
 
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,HttpResponse
 from django.views import View
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, authenticate
@@ -12,6 +12,23 @@ from django.urls import reverse_lazy
 class Normal(View):
     def get(self, request):
         return render(request,"index.html")
+
+class Test(View):
+    def get(self,request):
+        message = request.session.get('message',False)
+        if(message):del(request.session['message'])
+        return render(request,"login.html",{'message':message})
+    
+    def post(self,request):
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+        user = authenticate(username = username, password = password)
+        if user is not None:# checks if the user is logged in or not?
+            login(request,user) #logins the user
+            return redirect('/home')
+        else:
+            request.session['message'] = "Invalid login"
+            return redirect(request.path)
 
 class AuthView(View):
     template_name = 'auth.html'
