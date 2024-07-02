@@ -1,11 +1,10 @@
-from django.shortcuts import render,redirect,HttpResponse
+from django.shortcuts import render
+from django.views import View
 
 # Create your views here.
-def index(response):
-    response = """<html>
-    <head></head>
-    <body>
-    <h1>hello</h1>
-    </body>
-    </html>"""
-    return HttpResponse(response)
+# class login:
+#     def login(request):
+#         retrun HttpResponse(request,"login.html")
+class Normal(View):
+    def get(self, request):
+        return render(request,"index.html")
