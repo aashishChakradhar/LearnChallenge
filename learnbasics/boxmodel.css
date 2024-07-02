@@ -1,0 +1,26 @@
+table {
+  margin: auto;
+}
+.row {
+  height: 20em;
+}
+td {
+  border-radius: 2em;
+  border: 0.5em solid white;
+}
+.one {
+  background-color: #36ba98;
+  width: 5em;
+}
+.two {
+  background-color: #e9c46a;
+  width: 5em;
+}
+.three {
+  background-color: #f4a261;
+  width: 5em;
+}
+.four {
+  background-color: #e76f51;
+  width: 5em;
+}
