@@ -2,10 +2,10 @@
 {% block body %}
 <div class="container">
   {% if message %}
-  <p>{{messsage}}
+  <p>{{message  }}
 
     hello world
-  </p>
+  </p> 
   {% endif %}
   <form action = "test" method = "POST">
     {% csrf_token %}

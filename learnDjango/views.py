@@ -15,9 +15,9 @@ class Normal(View):
 
 class Test(View):
     def get(self,request):
-        message = request.session.get('message',False)
-        if(message):del(request.session['message'])
-        return render(request,"login.html",{'message':message})
+        msg = request.session.get('msg',False)
+        if(msg):del(request.session['msg'])
+        return render(request,"login.html",{'message':msg})
     
     def post(self,request):
         username = request.POST.get("username")
@@ -25,9 +25,10 @@ class Test(View):
         user = authenticate(username = username, password = password)
         if user is not None:# checks if the user is logged in or not?
             login(request,user) #logins the user
-            return redirect('/home')
+            return redirect ('/')
         else:
-            request.session['message'] = "Invalid login"
+            msg = "invalid"
+            request.session['msg'] = msg
             return redirect(request.path)
 
 class AuthView(View):
