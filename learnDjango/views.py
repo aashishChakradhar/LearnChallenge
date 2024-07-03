@@ -13,11 +13,15 @@ class Normal(View):
     def get(self, request):
         return render(request,"index.html")
 
-class Test(View):
+class Authentication(View):
     def get(self,request):
-        message = request.session.get('message',False)
-        if(message):del(request.session['message'])
-        return render(request,"login.html",{'message':message})
+        alert_title = request.session.get('alert_title',False)
+        alert_detail = request.session.get('alert_detail',False)
+        if(alert_title):del(request.session['alert_title'])
+        if(alert_detail):del(request.session['alert_detail'])
+        context = {'alert_title':alert_title,
+            'alert_detail':alert_detail,}
+        return render(request,"login.html",context)
     
     def post(self,request):
         username = request.POST.get("username")
@@ -27,7 +31,8 @@ class Test(View):
             login(request,user) #logins the user
             return redirect('/home')
         else:
-            request.session['message'] = "Invalid login"
+            request.session['alert_title'] = "Invalid Login Attempt"
+            request.session['alert_detail'] = "Please enter valid login credential."
             return redirect(request.path)
 
 class AuthView(View):
