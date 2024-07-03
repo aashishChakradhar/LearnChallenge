@@ -1,6 +1,6 @@
-{% extends "base.html" %} {% block tittle %}login{% endblock tittle %}
+{% extends "base.html" %}
+{% block tittle %}login{% endblock tittle %}
 {% block body %}
-<h1>hello world</h1>
 <div class="form">
   {% if alert_title %}
   <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -10,7 +10,6 @@
       />
     </symbol>
   </svg>
-
   <div class="alert alert-danger d-flex align-items-center" role="alert">
     <svg
       class="alert_icon bi flex-shrink-0 me-2"
@@ -24,7 +23,7 @@
   {% endif %}
 
   <div class="form_title">Login</div>
-  <form action="test" method="POST">
+  <form action="authenticate" method="POST">
     {% csrf_token %}
     <div class="mb-3">
       <label for="username" class="form-label">Username</label>
