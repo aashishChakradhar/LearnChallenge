@@ -15,7 +15,6 @@ class Normal(View):
 
 class Authentication(View):
     def get(self,request):
-<<<<<<< HEAD
         alert_title = request.session.get('alert_title',False)
         alert_detail = request.session.get('alert_detail',False)
         if(alert_title):del(request.session['alert_title'])
@@ -23,11 +22,6 @@ class Authentication(View):
         context = {'alert_title':alert_title,
             'alert_detail':alert_detail,}
         return render(request,"login.html",context)
-=======
-        msg = request.session.get('msg',False)
-        if(msg):del(request.session['msg'])
-        return render(request,"login.html",{'message':msg})
->>>>>>> 8088a35d9eeae150c44107d9c392354e7d067a8e
     
     def post(self,request):
         username = request.POST.get("username")
@@ -37,13 +31,8 @@ class Authentication(View):
             login(request,user) #logins the user
             return redirect ('/')
         else:
-<<<<<<< HEAD
             request.session['alert_title'] = "Invalid Login Attempt"
             request.session['alert_detail'] = "Please enter valid login credential."
-=======
-            msg = "invalid"
-            request.session['msg'] = msg
->>>>>>> 8088a35d9eeae150c44107d9c392354e7d067a8e
             return redirect(request.path)
 
 class AuthView(View):
