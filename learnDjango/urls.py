@@ -5,6 +5,6 @@ urlpatterns = [
     #path("{urlpath}",{view class}, name="{reverse indexing}")
     path('', views.Normal.as_view(), name='index'),
     path('home', views.Normal.as_view(), name='index'),
-    # path('auth', views.AuthView.as_view(), name='auth'),
-    path('authenticate', views.Authentication.as_view(), name='authenticate'),
+    path('login', views.Login_view.as_view(), name='login'),
+    path('logout', views.Logout_view.as_view(), name='logout'),
 ]

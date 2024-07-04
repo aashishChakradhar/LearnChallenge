@@ -2,21 +2,17 @@
 from django.shortcuts import render, redirect,HttpResponse
 from django.views import View
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from django.urls import reverse_lazy
 
-# Create your views here.
-# class login:
-#     def login(request):
-#         retrun HttpResponse(request,"login.html")
 class Normal(View):
     def get(self, request):
         if request.user.is_authenticated:
             return render(request,'index.html')
         else:
-            return redirect('/authenticate')
+            return redirect('/login')
 
-class Authentication(View):
+class Login_view(View):
     def get(self,request):
         alert_title = request.session.get('alert_title',False)
         alert_detail = request.session.get('alert_detail',False)
@@ -37,6 +33,10 @@ class Authentication(View):
             request.session['alert_title'] = "Invalid Login Attempt"
             request.session['alert_detail'] = "Please enter valid login credential."
             return redirect(request.path)
+class Logout_view(View):
+    def get(self,request):
+        logout(request)
+        return redirect('/login')
 
 # class AuthView(View):
 #     template_name = 'auth.html'

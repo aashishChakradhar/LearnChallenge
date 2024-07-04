@@ -1,5 +1,4 @@
-{% extends "base.html" %}
-{% block tittle %}login{% endblock tittle %}
+{% extends "base.html" %} {% block tittle %}login{% endblock tittle %} 
 {% block body %}
 <div class="form">
   {% if alert_title %}
@@ -23,7 +22,7 @@
   {% endif %}
 
   <div class="form_title">Login</div>
-  <form action="authenticate" method="POST">
+  <form action="login" method="POST">
     {% csrf_token %}
     <div class="mb-3">
       <label for="username" class="form-label">Username</label>
