@@ -38,9 +38,9 @@ plt.plot(x_train,temp, c='b',label = "Predicted values")
 #plot gives the solid line joining the points
 
 # to make prediction
-x = int(input("Enter square feet: "))
+x = float(input("Enter square feet: "))
 cost = func(w,x,b)
-plt.scatter(x,cost,marker='o',c='g',label='sold for')
+plt.scatter(x,cost,marker='o',c='g',label='Specified Price')
 print(f"the cost of the house is: {cost}")
 plt.legend()
 plt.show()
