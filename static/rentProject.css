@@ -1,10 +1,17 @@
+:root{
+  --primary-color:#1c3879;
+  --primary-fade: #607eaa;
+  --secondary-color:#eae3d2;
+  --secondary-fade:#f9f5eb;
+  --alert: #eb1d36;
+}
 body {
-  background-color: #f9f5eb;
-  color: #1c3879;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
 }
 .form {
-  background-color: #1c3879;
-  color: #f9f5eb;
+  background-color: var(--primary-color);
+  color: var(--secondary-fade);
   width: 40%;
   margin-top: 7%;
   margin-left: 30%;
@@ -17,16 +24,16 @@ body {
   padding-left: 40%;
 }
 .form-text {
-  color: #f9f5eb;
+  color: var(--secondary-fade);
 }
 .alert {
   margin: 0;
   padding: 0;
   padding-left: 1em;
   height: 3em;
-  background-color: #607eaa;
-  border: 0.3em solid #eb1d36;
-  color: #f9f5eb;
+  background-color: var(--primary-fade);
+  color: var(--secondary-fade);
+  border: 0.3em solid var(--alert);
   font-weight: bold;
 }
 .alert_icon {
@@ -38,22 +45,22 @@ label {
   font-weight: bold;
 }
 .nav-all {
-  background-color: #607eaa;
-  color: #eae3d2;
+  background-color: var(--primary-fade);
+  color: var(--secondary-color);
   margin: 1em 0;
   padding: 1em 0;
   width: 100%;
   border-radius: 2em;
 }
 .nav.nav-tabs {
-  background-color: #1c3879;
+  background-color: var(--primary-color);
   border: 0 none;
   margin: 0;
   padding: 0;
   border-radius: 2em;
 }
 .navbar-brand {
-  background-color: #1c3879;
+  background-color: var(--primary-color);
   margin: 0 0 0 1.3em;
   padding: 0 0.5em;
   border-radius: 2em;
@@ -61,11 +68,12 @@ label {
   font-weight: 700;
 }
 .navbar-brand:hover {
-  background-color: #607eaa;
+  background-color: var(--primary-fade);
+  color: var(--secondary-fade);
 }
 .nav-item .nav-link {
-  background-color: #1c3879;
-  color: #eae3d2;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
   margin: 0.8em 0;
   padding: 0 0.5em;
   font-size: x-large;
@@ -73,14 +81,16 @@ label {
   border-radius: 2em;
 }
 .nav-item .nav-link:hover {
-  background-color: #607eaa;
+  background-color: var(--primary-fade);
+  color: var(--secondary-fade);
 }
 .nav-link.logged {
   background-color: #198754;
-  border: 0.1em solid #eae3d2;
+  border: 0.1em solid var(--secondary-fade);
   font-weight: 400;
   padding: 0 1em;
 }
 .nav-link.logged:hover {
-  background-color: #eb1d36;
+  background-color: var(--alert);
+  color: var(--secondary-fade);
 }
