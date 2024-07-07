@@ -38,6 +38,12 @@ class Logout_view(View):
         logout(request)
         return redirect('/login')
 
+class Payment_view(View):
+    def get(self,request):
+        return render(request,"payment.html")
+    def post(self, request):
+        return redirect('/')
+
 # class AuthView(View):
 #     template_name = 'auth.html'
 
