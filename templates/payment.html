@@ -1,85 +1,51 @@
 {% extends "base.html" %} {% block body %}
-<h1>hello world</h1>
-<p>this is index page</p>
 
-<div class="container">
-  
-    <div class="row justify-content-center mb-4">
-      <div class="col-md-6 d-flex justify-content-center">
-        <div class="card" style="width: 18rem">
-          {% comment %} <img src="..." class="card-img-top" alt="..." /> {% endcomment %}
-          <div class="card-body">
-            <h5 class="card-title">Room 1</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-          </div>
-          <form action="payment" method="POST">
-            {% csrf_token %}
-            <label for="recieved">Recieved</label>
-            <input type="number" id="recieved" name="recieved">
-            <label for="comment">Comment</label>
-            <input type="text" id="comment" name="comment">
-            <button type="submit" class="button btn btn-primary">Check</button>
-          </form>
-          <!-- <ul class="list-group list-group-flush">
-            <li class="list-group-item">Recieved
-              
-            </li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
-          </ul>
-          <div class="card-body">
-            <a href="#" class="card-link">Edit Detail</a>
-            <a href="#" class="card-link">View Detail</a>
-          </div> -->
-        </div>
+<div class = "form">
+  <div class="form_title">Payment</div>
+  <form action="login" method="POST">
+    {% csrf_token %}
+    
+    <div class="mb-3">
+      <label for="room" class="form-label">Room: </label>
+      <input
+        type="text"
+        class="form-control"
+        id="room"
+        aria-describedby="teztHelp"
+        name="room"
+      />
+      <div id="username" class="form-text">
+        We'll never share your email with anyone else.
       </div>
     </div>
-    <div class="row justify-content-center mb-4">
-      <div class="col-md-6 d-flex justify-content-center">
-        <div class="card" style="width: 18rem">
-          <img src="..." class="card-img-top" alt="..." />
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">An item</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
-          </ul>
-          <div class="card-body">
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 d-flex justify-content-center">
-        <div class="card" style="width: 18rem">
-          <img src="..." class="card-img-top" alt="..." />
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">An item</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
-          </ul>
-          <div class="card-body">
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
-          </div>
-        </div>
-      </div>
+    <div class="mb-3">
+      <label for="payment" class="form-label">Payment</label>
+      <input
+        type="number"
+        class="form-control"
+        id="payment"
+        name="payment"
+      />
     </div>
-  </div>
+    <div class="dropdown-center">
+      <button class=" btn btn-secondary dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Centered dropdown
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Action two</a></li>
+        <li><a class="dropdown-item" href="#">Action three</a></li>
+      </ul>
+    </div>
+    
+    {% comment %} <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div> {% endcomment %}
+    <div class="d-grid gap-2 col-6 mx-auto">
+      <button type="submit" class="button btn btn-primary">Login</button>
+    </div>
+  </form>
+</div>
+</div>
   {% endblock body %}

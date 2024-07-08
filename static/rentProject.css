@@ -21,7 +21,7 @@ body {
 .form_title {
   font-size: 3em;
   font-weight: bolder;
-  padding-left: 40%;
+  padding-left: 35%;
 }
 .form-text {
   color: var(--secondary-fade);
@@ -94,3 +94,21 @@ label {
   background-color: var(--alert);
   color: var(--secondary-fade);
 }
+.dropdown-center .dropdown-item{
+  background-color: var(--primary-color);
+  color: var(--secondary-fade);
+  
+}
+.button{
+  background-color: var(--secondary-fade);
+  color: var(--primary-color);
+  font-size: 1.5em;
+  font-weight: 900;
+  border: 0 solid var(--primary-fade);
+  border-radius: 0.8em;
+}
+.button:hover{
+  background-color: var(--primary-fade);
+  color: var(--secondary-fade);
+}
+
