@@ -5,7 +5,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
 from django.urls import reverse_lazy
 
-class Normal(View):
+class Index(View):
     def get(self, request):
         if request.user.is_authenticated:
             return render(request,'index.html')
@@ -35,8 +35,9 @@ class Login_view(View):
             return redirect(request.path)
 class Logout_view(View):
     def get(self,request):
+        request.session.clear()
         logout(request)
-        return redirect('/login')
+        return redirect('/')
 
 class Payment_view(View):
     def get(self,request):
