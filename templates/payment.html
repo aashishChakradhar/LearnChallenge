@@ -19,7 +19,7 @@
       </div>
     </div>
     <div class="mb-3">
-      <label for="payment" class="form-label">Payment</label>
+      <label for="payment" class="form-label">Amount</label>
       <input
         type="number"
         class="form-control"
@@ -27,14 +27,24 @@
         name="payment"
       />
     </div>
+    <div class="mb-3">
+      <label for="month" class="form-label">Room: </label>
+      <input
+        type="text"
+        class="form-control"
+        id="month"
+        aria-describedby="teztHelp"
+        name="month"
+      />
+    </div>
     <div class="dropdown-center">
       <button class=" btn btn-secondary dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Centered dropdown
+        Select Option
       </button>
       <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Action two</a></li>
-        <li><a class="dropdown-item" href="#">Action three</a></li>
+        {% for month in month %}
+        <li id={{month.month}} value = {{month.month}}>{{month.month}}</li>
+        {% endfor %}
       </ul>
     </div>
     <div class="d-grid gap-2 col-6 mx-auto">

@@ -18,9 +18,9 @@ class NepaliDate(BaseModel):
 
 class Room(BaseModel):
     roomName = models.CharField(max_length=20,default="none")
-    floor = models.DecimalField(max_digits=2,decimal_places=2,default=0)
+    floor = models.DecimalField(max_digits=1,decimal_places=0,default=0)
     occupied = models.BooleanField(default=False)
-    rent = models.DecimalField(max_digits=5,decimal_places=2,validators=[MinValueValidator(0.00),MaxValueValidator(10000.00)],default=00.00)
+    rent = models.DecimalField(max_digits=6,decimal_places=2,validators=[MinValueValidator(0.00),MaxValueValidator(10000.00)],default=00.00)
     def __str__(self):
         return self.roomName
 
@@ -35,8 +35,8 @@ class Person(BaseModel):
 class RentHistory(BaseModel):
     roomId = models.ForeignKey(Room,on_delete = models.CASCADE,default = 0)
     personId = models.ForeignKey(Person,on_delete = models.CASCADE,default = 0)
-    totalRequired = models.DecimalField(max_digits=6,decimal_places=2,validators=[MinValueValidator(0.00),MaxValueValidator(999999.99)])
-    totalRemaining = models.DecimalField(max_digits=6,decimal_places=2,validators=[MinValueValidator(0.00),MaxValueValidator(999999.99)])
+    totalRequired = models.DecimalField(max_digits=8,decimal_places=2,validators=[MinValueValidator(0.00),MaxValueValidator(999999.99)])
+    totalRemaining = models.DecimalField(max_digits=8,decimal_places=2,validators=[MinValueValidator(0.00),MaxValueValidator(999999.99)])
     def __str__(self):
         return self.remaining
 
@@ -45,7 +45,7 @@ class RentPayment(BaseModel):
     personId = models.ForeignKey(Person,on_delete = models.CASCADE,default = 0)
     RentHistoryId = models.ForeignKey(RentHistory,on_delete = models.CASCADE,default = 0)
     dateId = models.ForeignKey(NepaliDate,on_delete = models.CASCADE,default = 0)
-    paid = models.DecimalField(max_digits=4,decimal_places=2,validators=[MinValueValidator(0.00),MaxValueValidator(9999.99)])
+    paid = models.DecimalField(max_digits=6,decimal_places=2,validators=[MinValueValidator(0.00),MaxValueValidator(9999.99)])
     comment = models.CharField(max_length=100,default="No Comments")
     def __str__(self):
         return self.rentMonth

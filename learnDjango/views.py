@@ -4,6 +4,7 @@ from django.views import View
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
 from django.urls import reverse_lazy
+from learnDjango.models import *
 
 class Index(View):
     def get(self, request):
@@ -41,7 +42,13 @@ class Logout_view(View):
 
 class Payment_view(View):
     def get(self,request):
-        return render(request,"payment.html")
+        month = NepaliDate.objects.all()
+        room = Room.objects.all()
+        context = {
+            "month": month,
+            "room" : room,
+        }
+        return render(request,"payment.html",context)
     def post(self, request):
         return redirect('/')
 
