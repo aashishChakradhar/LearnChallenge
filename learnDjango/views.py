@@ -42,9 +42,11 @@ class Logout_view(View):
 
 class Payment_view(View):
     def get(self,request):
-        month = NepaliDate.objects.all()
+        year = NepaliYear.objects.filter(current = True)
+        month = NepaliMonth.objects.all()
         room = Room.objects.filter(occupied = True)
         context = {
+            "year" : year,
             "month": month,
             "room" : room,
         }
