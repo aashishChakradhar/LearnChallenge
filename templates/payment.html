@@ -1,25 +1,30 @@
-{% extends "base.html" %} {% block body %}
-
+{% extends "base.html" %}
+{% block title %}Payment | {% endblock title %}
+{% block body %}
 <div class = "form">
   <div class="form_title">Payment</div>
-  <form action="login" method="POST">
+  <form action="payment" method="POST">
     {% csrf_token %}
-    
-    <div class="mb-3">
-      <label for="room" class="form-label">Room: </label>
-      <input
-        type="text"
-        class="form-control"
-        id="room"
-        aria-describedby="teztHelp"
-        name="room"
-      />
-      <div id="username" class="form-text">
-        We'll never share your email with anyone else.
-      </div>
+    <div>
+      <label for="room">Room</label>
+      <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="room">
+        <option selected>Select Room</option>
+        {% for room in room %}
+          <option id ={{room}} value={{room}}>{{room}}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div>
+      <label for="month">Month</label>
+      <select class="form-select form-select-lg mb-3" aria-label="Large select example" id = "month" required>
+        <option selected>Select Month</option>
+        {% for month in month %}
+          <option id ={{month}} value={{month}}>{{month}}</option>
+        {% endfor %}
+      </select>
     </div>
     <div class="mb-3">
-      <label for="payment" class="form-label">Amount</label>
+      <label for="payment" class="form-label">Recieved Amount</label>
       <input
         type="number"
         class="form-control"
@@ -27,28 +32,8 @@
         name="payment"
       />
     </div>
-    <div class="mb-3">
-      <label for="month" class="form-label">Room: </label>
-      <input
-        type="text"
-        class="form-control"
-        id="month"
-        aria-describedby="teztHelp"
-        name="month"
-      />
-    </div>
-    <div class="dropdown-center">
-      <button class=" btn btn-secondary dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Select Option
-      </button>
-      <ul class="dropdown-menu">
-        {% for month in month %}
-        <li id={{month.month}} value = {{month.month}}>{{month.month}}</li>
-        {% endfor %}
-      </ul>
-    </div>
     <div class="d-grid gap-2 col-6 mx-auto">
-      <button type="submit" class="button btn btn-primary">Login</button>
+      <button type="submit" class="button btn btn-primary">Add Record</button>
     </div>
   </form>
 </div>

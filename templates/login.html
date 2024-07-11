@@ -1,5 +1,5 @@
-{% extends "base.html" %} {% block tittle %}login{% endblock tittle %} 
-{% block body %}
+{% extends "base.html" %} {% block tittle %}login | {% endblock tittle %}
+{%block body %}
 <div class="form">
   {% if alert_title %}
   <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -32,6 +32,7 @@
         id="username"
         aria-describedby="teztHelp"
         name="username"
+        required
       />
       <div id="username" class="form-text">
         We'll never share your email with anyone else.
@@ -44,6 +45,7 @@
         class="form-control"
         id="password"
         name="password"
+        required
       />
     </div>
     <div class="mb-3 form-check">

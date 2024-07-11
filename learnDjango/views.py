@@ -43,15 +43,34 @@ class Logout_view(View):
 class Payment_view(View):
     def get(self,request):
         month = NepaliDate.objects.all()
-        room = Room.objects.all()
+        room = Room.objects.filter(occupied = True)
         context = {
             "month": month,
             "room" : room,
         }
         return render(request,"payment.html",context)
     def post(self, request):
-        return redirect('/')
-
+        return redirect('/payment')
+    
+class EditRoom(View):
+    def get(self,request):
+        room = Room.objects.all()
+        context = {
+            "room": room,
+        }
+        return render(request,"editRoom.html",context)
+    def post(self, request):
+        return redirect('/room-person')
+    
+class EditPerson(View):
+    def get(self,request):
+        person = Person.objects.all()
+        context = {
+            "person": person,
+        }
+        return render(request,"editPerson.html",context)
+    def post(self, request):
+        return redirect('/edit-person')
 # class AuthView(View):
 #     template_name = 'auth.html'
 
