@@ -10,13 +10,13 @@
       <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="room">
         <option value = "room">---Select Room---</option>
         {% for room in room %}
-          <option id ={{room}} value={{room}}>{{room}}</option>
+          <option id ={{room.room}} value={{room.room}}>{{room.room}}</option>
         {% endfor %}
       </select>
     </div>
     <div>
       {% for year in year %}
-      <h2>{{year.year}}</h2>
+      <h4>Year: {{year.year}}</h4>
       {% endfor %}
     </div>
     <div>
@@ -24,7 +24,7 @@
       <select class="form-select form-select-lg mb-3" aria-label="Large select example" id = "month" >
         <option value = "month">---Select Month---</option>
         {% for month in month %}
-          <option id ={{month}} value={{month}}>{{month}}</option>
+          <option id ={{month.month}} value={{month.month}}>{{month.month}}</option>
         {% endfor %}
       </select>
     </div>
