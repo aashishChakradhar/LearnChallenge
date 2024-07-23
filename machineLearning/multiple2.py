@@ -182,11 +182,12 @@ m,_ = x_train.shape
 for i in range(m):
     print(f"prediction: {np.dot(x_train[i], w_final) + b_final:0.2f}, target value: {y_train[i]}")
 
-# plot cost versus iteration  
-fig, (ax1, ax2) = plt.subplots(1, 2, constrained_layout=True, figsize=(12, 4))
-ax1.plot(J_hist)
-ax2.plot(100 + np.arange(len(J_hist[100:])), J_hist[100:])
-ax1.set_title("Cost vs. iteration");  ax2.set_title("Cost vs. iteration (tail)")
-ax1.set_ylabel('Cost')             ;  ax2.set_ylabel('Cost') 
-ax1.set_xlabel('iteration step')   ;  ax2.set_xlabel('iteration step') 
-plt.show()
+# not working
+# # plot cost versus iteration  
+# fig, (ax1, ax2) = plt.subplots(1, 2, constrained_layout=True, figsize=(12, 4))
+# ax1.plot(J_hist)
+# ax2.plot(100 + np.arange(len(J_hist[100:])), J_hist[100:])
+# ax1.set_title("Cost vs. iteration");  ax2.set_title("Cost vs. iteration (tail)")
+# ax1.set_ylabel('Cost')             ;  ax2.set_ylabel('Cost') 
+# ax1.set_xlabel('iteration step')   ;  ax2.set_xlabel('iteration step') 
+# plt.show()
