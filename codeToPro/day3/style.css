@@ -1,0 +1,60 @@
+h2 {
+  color: red;
+}
+
+.for_class {
+  /* dot for class */
+  color: aliceblue;
+}
+#for_id {
+  /* hash for id */
+  /* id are unique to a file */
+  color: aliceblue;
+}
+
+/*
+ p[draggable] {
+  it selects all the paragraph elements 
+  with the draggable attribute 
+} 
+p[draggable = 'false']{
+    this can also be done
+}
+  in html:
+  <p draggable = 'true' ></p>
+
+*{
+    this select all the elements
+}
+  */
+html {
+  color: black;
+  font-size: 20pt;
+}
+.forRem {
+  color: green;
+  font-size: 15pt;
+}
+
+.forEm {
+  color: blue;
+  font-size: 30pt;
+}
+
+footer {
+  font-size: 50pt;
+}
+
+.sampleEm {
+  color: black;
+  font-size: 1em;
+}
+
+.sampleRem {
+  color: red;
+  font-size: 1rem;
+}
+
+html {
+  font-family: "Times New Roman", Times, serif;
+}
