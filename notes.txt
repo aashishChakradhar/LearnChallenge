@@ -7,4 +7,41 @@
     - nesting and indentation
 
 ---Day two ---
-    - 
+    - rem to depends on root i.e html tag(recomended to use)
+    - em depends on parent
+
+---Day three ---
+    - border
+        - when four values are given;
+            border value moves in clockwise direction
+                [i.e top, right, bottom, left]
+        - when two values are given:
+            [top bottom, left right]
+        - when only one value is given:
+            for all four direction
+    - padding
+        - inside of border
+    - margin
+        - outside of border
+        - gap between two different components
+    
+    -cascading
+        - the css rule is applied as per water flow level
+        
+        categorise to determinte cascading
+            1. position
+                - the bottom css properties over writes the top css properties
+            2. specificity
+                - order
+                    1. element
+                    2. class
+                    3. attribute
+                    4. id
+            3. type
+                - order
+                    1. external
+                    2. internal
+                    3. inline
+            4. important
+                - keyword added after a property
+                    eg. color: red ! important;

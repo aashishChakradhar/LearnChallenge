@@ -1,0 +1,28 @@
+img {
+  height: 50%;
+  width: 100%;
+  border: 5px solid yellow;
+}
+div {
+  width: 40%;
+  margin-top: 5rem;
+  margin-left: 30%;
+}
+.meme {
+  text-align: center;
+  height: fit-content;
+  background-color: black;
+  padding: 1rem;
+  align-content: center;
+  color: white;
+}
+div h1 {
+  color: red;
+  font-family: Impact, "Arial Narrow Bold", sans-serif;
+  font-weight: bold;
+  margin: 0;
+}
+.text {
+  color: white;
+  size: 1rem;
+}
