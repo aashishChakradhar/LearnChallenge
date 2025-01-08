@@ -1,0 +1,22 @@
+body{
+    background-color: wheat;
+}
+ .left-block{
+    display: block;
+    text-align: justify;
+    justify-content: left;
+    background-color: aqua;
+    width: 400px;
+    height: fit-content;
+    padding: 15px;
+ }
+
+img{
+    max-height: 200px;
+    max-width: 200px;
+    margin: 10px;
+    float: left;
+}
+
+.p{
+}

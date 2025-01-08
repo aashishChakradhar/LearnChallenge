@@ -1,0 +1,90 @@
+.basic{
+    background-color: red;
+    display: inline-block;
+}
+body{
+    background-color: wheat;
+}
+p{
+    color: yellow;
+}
+.background{
+    background-color: white;
+    position: relative;
+    height: 500px;
+    width: 500px;
+    top: 200px;
+    left: 200px;
+}
+.blue-stick{
+    background-color: gray;
+    position: absolute;
+    height: 500px;
+    width: 20px;
+    top: 0;
+    left: 0;
+    /* transform: rotatez(45deg); */
+}
+.blue-diagonal{
+    background-color: blue;
+    position: absolute;
+    height: 350px;
+    width: 20px;
+    top: -45px;
+    left: 125px;
+    z-index: 1;
+    transform: rotatez(-45deg);
+}
+.triangle-left {
+	width: 0;
+	height: 0;
+	
+}
+.blue-base{
+    background-color: blue;
+    position: absolute;
+    width: 350px;
+    height: 20px;
+    top: 480px;
+    left: 0px;
+    z-index: 1;
+}
+.red-triangle{
+    background-color: white;
+    /* height: 250px;
+    width: 300px; */
+    /* top: 20px;
+    left: 20px;
+    position: absolute; */
+
+    border-top: 25px solid transparent;
+	border-left: 50px solid crimson;
+    border-right: 50px solid crimson;
+
+	border-bottom: 25px solid transparent;
+}
+.second-box{
+    background-color: red;
+    position: absolute;
+    z-index: 1;
+    top: 150px;
+    left:250px;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+
+input.button{
+    background-color: green;
+}
+/*
+
+parent > child {
+    needs to be one level below
+}
+parent  descendent{
+    need to be inside the tag
+}
+selectorselector{
+}
+*/

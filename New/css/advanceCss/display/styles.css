@@ -1,0 +1,21 @@
+body{
+    background-color: wheat;
+}
+.blue-box{
+    background-color: blue;
+    height: 200px;
+    width: 200px;
+    display: block;
+}
+.green-box{
+    background-color: green;
+    height: 200px;
+    width: 200px;
+    display: block;
+}
+.red-box{
+    background-color: red;
+    height: 200px;
+    width: 200px;
+    display: block;
+}
