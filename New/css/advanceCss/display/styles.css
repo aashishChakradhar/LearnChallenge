@@ -3,19 +3,17 @@ body{
 }
 .blue-box{
     background-color: blue;
-    height: 200px;
-    width: 200px;
     display: block;
+    /* allow to set size but occupies whole line*/
 }
 .green-box{
     background-color: green;
-    height: 200px;
-    width: 200px;
-    display: block;
+    display: inline;
+    /* cannot set size */
 }
 .red-box{
     background-color: red;
-    height: 200px;
-    width: 200px;
-    display: block;
+    display: inline-block;
+    width: 400px;
+    /* allows to set size but occupies same line until space is available */
 }
