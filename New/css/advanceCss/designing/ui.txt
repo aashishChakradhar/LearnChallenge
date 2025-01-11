@@ -1,0 +1,12 @@
+1.  hierarchy
+2.  layout
+3.  alignment
+4.  whitespace
+5.  audience
+
+ux
+simplicity
+consistency
+reading pattern - f,z
+all platform design
+dont misuse your power
