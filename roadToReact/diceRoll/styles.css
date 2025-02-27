@@ -20,9 +20,15 @@ img {
     margin: 3rem;
 }
 
-
-.button {
+.center-button{
     display: flex;
     justify-content: center;  /* Center horizontally */
     align-items: center;
+}
+button {
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding:.8rem;
+    border-radius:8%;
+    margin:0.5rem;
 }

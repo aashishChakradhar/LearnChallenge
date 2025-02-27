@@ -10,7 +10,6 @@ function diceRoll() {
     while (numberSet.size < numberOfDices) {
         numberSet.add(numberGenerator()); // add number to set until set size is equal to number of player
     }
-
     const numberGenerated = [...numberSet]; // Convert Set to array
     const imageElements = document.getElementsByClassName('dice'); // Get image elements
     for (let index = 0; index < numberGenerated.length; index++) {
@@ -38,12 +37,9 @@ function numberOfPlayers(){
         img.src = "images/dice" + (index + 1) + ".png"; // Ensure correct image path
         img.alt = "Dice Image";
         img.classList.add("dice"); // Add class properly
-        img.style.width = "3rem";
-        img.style.height = "3rem"; // Optional: Set image size
     
         div.appendChild(h4);
         div.appendChild(img);
         parent.appendChild(div); // Append div to parent
     }
-    
 }
