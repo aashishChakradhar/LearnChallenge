@@ -3,29 +3,32 @@ function numberGenerator(){
     return number;
 }
 
-function diceRoll(numberOfDices){
-    const numberGenerated = new Set([]);
-    const imageElements = document.getElementsByClassName('dice');
-    let index = 0;
-    while(index<numberOfDices) {
-        numberGenerated.add(numberGenerator());
-        imageElements[index].src = "images/dice"+numberGenerated[index]+".png";
-        index = numberGenerated.length;
+function diceRoll() {
+    const numberOfDices = document.getElementById("players").value; // gets number of player
+    const numberSet = new Set();
+
+    while (numberSet.size < numberOfDices) {
+        numberSet.add(numberGenerator()); // add number to set until set size is equal to number of player
     }
-    const maxValue = Math.max.apply(this,[...numberGenerated]);
+
+    const numberGenerated = [...numberSet]; // Convert Set to array
+    const imageElements = document.getElementsByClassName('dice'); // Get image elements
+    for (let index = 0; index < numberGenerated.length; index++) {
+        imageElements[index].src = `images/dice${numberGenerated[index]}.png`; // Update image source
+    }
+
+    const maxValue = Math.max(...numberGenerated);
     const maxValueIndex = numberGenerated.indexOf(maxValue);
 
     const result = document.querySelector(".result");
-    result.textContent = `Player${maxValueIndex+1} Wins`;
-    console.log(result);
+    result.textContent = `Player ${maxValueIndex + 1} Wins`; // Update result
 }
 
 function numberOfPlayers(){
-    const player = document.getElementById("players").value;
-    document.getElementById("playersValue").textContent = player;
-    console.log(player)
-    const parent = document.querySelector(".whole");
-    parent.innerHTML = "";
+    const player = document.getElementById("players").value;    // gets number of player
+    document.getElementById("playersValue").textContent = player;   // display number of player
+    const parent = document.querySelector(".whole");    // Get the parent element
+    parent.innerHTML = "";  // Clear previous content
     for (let index = 0; index < player; index++) {
         const div = document.createElement("div");
         const h4 = document.createElement("h4");
