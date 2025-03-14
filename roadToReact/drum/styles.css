@@ -1,0 +1,29 @@
+body{
+    background-color: #1c4891;
+}
+.title-text{
+    /* display: flex; */
+    justify-content: center;
+    text-align: center;
+    color: aliceblue;
+    font-size: 3rem;
+    font-weight: 900;
+    margin: 5rem 0rem;
+    padding: 1rem 0rem;
+    /* border: black solid 5px; */
+}
+.keys{
+    /* border: black solid 5px; */
+    text-align: center;
+    padding: 1rem 0rem;
+    margin: 5rem 0rem;
+}
+.drum-button{
+    height: 5rem;
+    width: 5rem;
+    border: transparent;
+    border-radius: 10px;
+    margin: 1rem;
+    padding: 1rem;
+    
+}
