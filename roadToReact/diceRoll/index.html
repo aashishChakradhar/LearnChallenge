@@ -7,17 +7,18 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="center">
-        <h1 class="title">Dice Roll</h1>
-        <h2 class="result">Roll The Dice</h2>
-        <label for="players"><h4>Players: <span id="playersValue">1</span></h4></label>
-        <input type = "range" min="1" max="4" value="1" id="players" oninput="numberOfPlayers()">
-        
+    <div class="title">Dice Roll</div>
+    <div class="player-num">Players: 
+        <select name="players" id="players" onchange="numberOfPlayers()">
+            <option value="1">1</option>
+            <option value="2">2</option>
+        </select>
     </div>
     <div class="whole">
-        <div>
-            <h4>Player 1</h4>  
-            <img class="dice" src="images/dice1.png" alt="">
+        <div class="single">
+            <div class="display-text">Player 1</div>
+        <img class="dice" src="images/dice1.png" alt="dice">
+        <div class="score display-text">Score: 0</div>
         </div>
     </div>
     <div class="center-button">
