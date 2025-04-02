@@ -55,6 +55,13 @@ footer{
     align-items: center;
     justify-content: center;
 }
+.pressed{
+    border: black 2px solid;
+    height : 5.8rem;
+    width : 5.8rem;
+    opacity: 60%;
+    color: gray;
+}
 #crash {
     background-image: url('images/crash.png');
 }
